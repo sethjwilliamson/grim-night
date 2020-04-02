@@ -21,5 +21,6 @@ public class EnemyHealth : MonoBehaviour
 
         //if(other.GetComponent<>. == "Light")
             health = health - 10;
+        //oopsiedoopsie
     }
 }
