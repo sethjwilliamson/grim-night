@@ -66,14 +66,14 @@ public class weaponHand : MonoBehaviour
                     gameObject.transform.parent = backgroundHand.transform;
                     gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
                     gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
-                    sprite.sortingOrder = 9;
+                    sprite.sortingOrder = 0;
                 }
                 if (moveDirection > 0)
                 {
                     gameObject.transform.parent = foregroundHand.transform;
                     gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
                     gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
-                    sprite.sortingOrder = 4;
+                    sprite.sortingOrder = 11;
                 }
             }
         }
