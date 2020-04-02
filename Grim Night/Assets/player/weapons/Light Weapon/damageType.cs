@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class damage : MonoBehaviour
 {
-    public float health = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +14,5 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-
-        //if(other.GetComponent<>. == "Light")
-            health = health - 10;
     }
 }
