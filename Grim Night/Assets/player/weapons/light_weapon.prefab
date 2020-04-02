@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 412686903231847280}
   - component: {fileID: 412686903231847283}
   - component: {fileID: 412686903231847282}
+  - component: {fileID: 114881524303762690}
   m_Layer: 0
   m_Name: light_weapon
   m_TagString: Untagged
@@ -168,6 +169,15 @@ MonoBehaviour:
   foregroundHandX: -0.75
   foregroundHandY: 2.25
   foregroundRotation: 70
-  backgroundHand: {fileID: 0}
-  foregroundHand: {fileID: 0}
-  sprite: {fileID: 0}
+--- !u!114 &114881524303762690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412686903231847281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd41cee1a67f1e48af94b1563de5162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
