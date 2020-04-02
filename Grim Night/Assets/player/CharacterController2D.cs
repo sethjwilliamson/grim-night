@@ -14,23 +14,23 @@ public class CharacterController2D : MonoBehaviour
     public Camera mainCamera;
     public Animator animator;
 
-
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     Collider2D mainCollider;
+    AudioSource step;
     // Check every collider except Player and Ignore Raycast
     LayerMask layerMask = ~(1 << 2 | 1 << 8);
     Transform t;
-
     // Use this for initialization
     void Start()
     {
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
+        step = GetComponent<AudioSource>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
@@ -45,7 +45,7 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         // Movement controls
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || r2d.velocity.x > 0.01f))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
         }
@@ -61,6 +61,8 @@ public class CharacterController2D : MonoBehaviour
         if (moveDirection != 0)
         {
             animator.SetBool("isRun", true);
+            step.loop = true;
+            step.enabled = true;
             if (moveDirection > 0 && !facingRight)
             {
                 facingRight = true;
@@ -75,10 +77,12 @@ public class CharacterController2D : MonoBehaviour
         else
         {
             animator.SetBool("isRun", false);
+            step.loop = false;
+            step.enabled = false;
         }
 
         // Jumping
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             
