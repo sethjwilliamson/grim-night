@@ -13,7 +13,7 @@ public class CharacterController2D : MonoBehaviour
     public float gravityScale = 1.5f;
     public Camera mainCamera;
     public Animator animator;
-
+    public AudioSource step;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -24,13 +24,13 @@ public class CharacterController2D : MonoBehaviour
     // Check every collider except Player and Ignore Raycast
     LayerMask layerMask = ~(1 << 2 | 1 << 8);
     Transform t;
-
     // Use this for initialization
     void Start()
     {
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
+        step = GetComponent<AudioSource>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
@@ -61,6 +61,8 @@ public class CharacterController2D : MonoBehaviour
         if (moveDirection != 0)
         {
             animator.SetBool("isRun", true);
+            step.loop = true;
+            step.enabled = true;
             if (moveDirection > 0 && !facingRight)
             {
                 facingRight = true;
@@ -75,6 +77,8 @@ public class CharacterController2D : MonoBehaviour
         else
         {
             animator.SetBool("isRun", false);
+            step.loop = false;
+            step.enabled = false;
         }
 
         // Jumping
