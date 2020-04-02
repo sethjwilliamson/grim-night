@@ -10,7 +10,7 @@ public class despawnBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeStamp = Time.time + 80f;
+        timeStamp = Time.time + 3f;
     }
 
     // Update is called once per frame
@@ -18,10 +18,10 @@ public class despawnBall : MonoBehaviour
     {
         if (timeStamp <= Time.time)
             Destroy(gameObject);
-        lt.intensity = Mathf.Lerp(10f, 1f, Time.deltaTime * smooth);
+        //lt.intensity = Mathf.Lerp(10f, 1f, Time.deltaTime * smooth);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        timeStamp = timeStamp + 0.5f;
+        Destroy(gameObject);
     }
 }
