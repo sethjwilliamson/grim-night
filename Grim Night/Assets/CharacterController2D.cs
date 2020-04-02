@@ -13,7 +13,6 @@ public class CharacterController2D : MonoBehaviour
     public float gravityScale = 1.5f;
     public Camera mainCamera;
     public Animator animator;
-    public AudioSource step;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -21,6 +20,7 @@ public class CharacterController2D : MonoBehaviour
     Vector3 cameraPos;
     Rigidbody2D r2d;
     Collider2D mainCollider;
+    AudioSource step;
     // Check every collider except Player and Ignore Raycast
     LayerMask layerMask = ~(1 << 2 | 1 << 8);
     Transform t;
