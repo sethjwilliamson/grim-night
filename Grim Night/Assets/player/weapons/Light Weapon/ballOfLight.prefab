@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5928490938112104747}
   - component: {fileID: 4140830970078034893}
   - component: {fileID: 4865236592950787594}
+  - component: {fileID: 5248310718284111226}
   m_Layer: 0
   m_Name: ballOfLight
   m_TagString: Untagged
@@ -94,6 +95,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lt: {fileID: 5928490939764915202}
   smooth: 200
+--- !u!114 &5248310718284111226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928490938112104744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2308e82354c8c342bc8207e64896ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Light
+  amountOfDamage: 20
 --- !u!1 &5928490939764915200
 GameObject:
   m_ObjectHideFlags: 0

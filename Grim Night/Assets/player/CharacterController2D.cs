@@ -60,7 +60,15 @@ public class CharacterController2D : MonoBehaviour
         // Change facing direction
         if (moveDirection != 0)
         {
-            animator.SetBool("isRun", true);
+            if (isGrounded)
+            {
+                animator.SetBool("isRun", true);
+            }
+            else
+            {
+                animator.SetBool("isJump", true);
+                animator.SetBool("isRun", false);
+            }
             step.loop = true;
             step.enabled = true;
             if (moveDirection > 0 && !facingRight)
@@ -85,7 +93,12 @@ public class CharacterController2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-            
+            animator.SetBool("isRun", false);
+            animator.SetBool("isJump", true);
+        }
+        else
+        {
+            animator.SetBool("isJump", false);
         }
 
         // Camera follow

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class weaponHand : MonoBehaviour
+public class WeaponHand : MonoBehaviour
 {
     public float backgroundHandX;
     public float backgroundHandY;

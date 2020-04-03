@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class despawnBall : MonoBehaviour
+public class DespawnBall : MonoBehaviour
 {
     public Light lt;
     public float smooth;
