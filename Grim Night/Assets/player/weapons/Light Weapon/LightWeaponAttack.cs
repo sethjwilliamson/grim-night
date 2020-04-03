@@ -5,10 +5,11 @@ using UnityEngine;
 public class LightWeaponAttack : MonoBehaviour
 {
     public GameObject ballOfLight;
-
+    public Animator animator;
     Vector2 lookDirection;
     float lookAngle;
     float timeStamp;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,11 @@ public class LightWeaponAttack : MonoBehaviour
     void Update()
     {
         Aim();
-        if (Input.GetButtonDown("Fire1") && (onCooldown()))
+        if (Input.GetButtonDown("Fire1") && (onCooldown())) {
+            Animate();
+            StartCoroutine(Wait());
             Shoot();
+        }
     }
     void Aim()
     {
@@ -37,5 +41,17 @@ public class LightWeaponAttack : MonoBehaviour
     bool onCooldown()
     {
         return timeStamp <= Time.time;
+    }
+
+    void Animate()
+    {
+      
+            animator.SetTrigger("Attack1");
+        
+        
+    }
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3f); 
     }
 }

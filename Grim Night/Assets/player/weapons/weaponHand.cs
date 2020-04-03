@@ -27,14 +27,12 @@ public class WeaponHand : MonoBehaviour
             gameObject.transform.parent = backgroundHand.transform;
             gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
             gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
-            sprite.sortingLayerName = "Background";
         }
         else
         {
             gameObject.transform.parent = foregroundHand.transform;
             gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
             gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
-            sprite.sortingLayerName = "Foreground";
         }
     }
 
@@ -51,14 +49,14 @@ public class WeaponHand : MonoBehaviour
                     gameObject.transform.parent = backgroundHand.transform;
                     gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
                     gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
-                    sprite.sortingLayerName = "Background";
+                    sprite.sortingOrder = 4;
                 }
                 if (moveDirection < 0)
                 {
                     gameObject.transform.parent = foregroundHand.transform;
                     gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
                     gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
-                    sprite.sortingLayerName = "Foreground";
+                    sprite.sortingOrder = 9;
                 }
             }
             else
@@ -68,14 +66,14 @@ public class WeaponHand : MonoBehaviour
                     gameObject.transform.parent = backgroundHand.transform;
                     gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
                     gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
-                    sprite.sortingLayerName = "Background";
+                    sprite.sortingOrder = 9;
                 }
                 if (moveDirection > 0)
                 {
                     gameObject.transform.parent = foregroundHand.transform;
                     gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
                     gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
-                    sprite.sortingLayerName = "Foreground";
+                    sprite.sortingOrder = 4;
                 }
             }
         }
