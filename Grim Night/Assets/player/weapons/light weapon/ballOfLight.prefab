@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4865236592950787594}
   - component: {fileID: 198927108903549142}
   - component: {fileID: 199440884657882702}
+  - component: {fileID: 114480691806982638}
   m_Layer: 0
   m_Name: ballOfLight
   m_TagString: weapon
@@ -94,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2322a98afcb144682c9cd5486e81b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lt: {fileID: 5928490939764915202}
   smooth: 200
 --- !u!198 &198927108903549142
 ParticleSystem:
@@ -4762,6 +4762,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &114480691806982638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928490938112104744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618ad6f7c0b094b4d98ccd76c8c4aba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Light
+  amountOfDamage: 20
 --- !u!1 &5928490939764915200
 GameObject:
   m_ObjectHideFlags: 0
