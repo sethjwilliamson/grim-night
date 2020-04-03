@@ -5,21 +5,34 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public float health = 100;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float lightEffectiveness;
+    public float fireEffectiveness;
+    public float waterEffectiveness;
+    public float physicalEffectiveness;
+    public float rangedEffectiveness;
+    private Damage ow;
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        //if(other.GetComponent<>. == "Light")
-            health = health - 10;
+        ow = other.gameObject.GetComponent<Damage>();
+        if (ow.getType() == "Light")
+        {
+            health = health - (ow.getDamage() * (lightEffectiveness / 100));
+        }
+        else if (ow.getType() == "Fire")
+        {
+            health = health - (ow.getDamage() * (fireEffectiveness / 100));
+        }
+        else if (ow.getType() == "Water")
+        {
+            health = health - (ow.getDamage() * (waterEffectiveness / 100));
+        }
+        else if (ow.getType() == "Physical")
+        {
+            health = health - (ow.getDamage() * (physicalEffectiveness / 100));
+        }
+        else if (ow.getType() == "Ranged")
+        {
+            health = health - (ow.getDamage() * (rangedEffectiveness / 100));
+        }
     }
 }
