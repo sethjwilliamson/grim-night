@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class despawnBall : MonoBehaviour
 {
-    public Light lt;
+    //public Light lt;
     public float smooth;
     float timeStamp;
     

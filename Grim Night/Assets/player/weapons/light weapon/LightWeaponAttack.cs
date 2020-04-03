@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightWeaponAttack : MonoBehaviour
 {
     public GameObject ballOfLight;
-    public Animator animator;
+    Animator animator;
     Vector2 lookDirection;
     float lookAngle;
     float timeStamp;
@@ -13,7 +13,7 @@ public class LightWeaponAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GameObject.Find("sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
