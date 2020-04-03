@@ -7,7 +7,6 @@ public class despawnBall : MonoBehaviour
     public Light lt;
     public float smooth;
     float timeStamp;
-    string temp = "Light";
     
     // Start is called before the first frame update
     void Start()
