@@ -40,3 +40,6 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *.lock
+Grim Night/Logs/Packages-Update.log
+Grim Night/Packages/manifest.json
+Grim Night/ProjectSettings/ProjectVersion.txt
