@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
                 health = health - (ow.getDamage() * (physicalEffectiveness / 100));
             }
             else if (ow.getType() == "Ranged")
-            {
+            { 
                 health = health - (ow.getDamage() * (rangedEffectiveness / 100));
             }
         }
