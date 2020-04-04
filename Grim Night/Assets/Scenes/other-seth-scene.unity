@@ -802,70 +802,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 75
       objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847280, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.9300014
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847280, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.814001
-      objectReference: {fileID: 0}
     - target: {fileID: 412686903231847281, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
         type: 3}
       propertyPath: m_Name
       value: watergun_weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847281, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847282, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: foregroundHandX
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847282, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: foregroundHandY
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847282, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: foregroundRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847282, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: backgroundHandX
-      value: 2.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847282, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: backgroundHandY
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847282, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: backgroundRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847283, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 412686903231847283, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6556268279882599347, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ec242ef2cf0fd7489971f5cc4f0a6c0, type: 3}

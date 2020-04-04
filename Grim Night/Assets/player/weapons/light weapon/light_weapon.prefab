@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8973484250274946683}
   m_LocalRotation: {x: -0, y: -0, z: 0.7115035, w: 0.7026826}
   m_LocalPosition: {x: -2.8401864, y: 1.018823, z: 0}
-  m_LocalScale: {x: 1.9300004, y: 1.8140004, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 8973484250684994216}
   m_Father: {fileID: 0}
@@ -194,7 +194,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
