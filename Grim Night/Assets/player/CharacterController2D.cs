@@ -13,6 +13,7 @@ public class CharacterController2D : MonoBehaviour
     public float gravityScale = 1.5f;
     public Camera mainCamera;
     public Animator animator;
+    public GameObject groundCheck;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -27,6 +28,7 @@ public class CharacterController2D : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        groundCheck = GameObject.Find("groundCheck");
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
@@ -44,6 +46,7 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = groundCheck.GetComponent<groundCheck>().getGroundCheck();
         // Movement controls
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
@@ -81,16 +84,22 @@ public class CharacterController2D : MonoBehaviour
             step.enabled = false;
         }
 
+
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             
         }
-
-        // Camera follow
-        if (mainCamera)
+        if (!isGrounded)
+        {
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
+        }
+        else
+        {
+            mainCamera.transform.position = new Vector3(t.position.x, t.position.y, cameraPos.z);
+            cameraPos = mainCamera.transform.position;
+        }
     }
 
     void FixedUpdate()
@@ -98,7 +107,7 @@ public class CharacterController2D : MonoBehaviour
         Bounds colliderBounds = mainCollider.bounds;
         Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, 0.1f, 0);
         // Check if player is grounded
-        isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.23f, layerMask);
+        //isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.23f, layerMask);
 
         // Apply movement velocity
         r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
