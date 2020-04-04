@@ -22,7 +22,7 @@ public class CharacterController2D : MonoBehaviour
     Collider2D mainCollider;
     AudioSource step;
     // Check every collider except Player and Ignore Raycast
-    LayerMask layerMask = ~(1 << 2 | 1 << 8);
+    LayerMask layerMask = ~(1 << 2 | 1 << 9);
     Transform t;
     // Use this for initialization
     void Start()
