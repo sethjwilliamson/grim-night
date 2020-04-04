@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4013085868469109782}
   - component: {fileID: 7444672696513460801}
   - component: {fileID: 7001492948775951764}
-  - component: {fileID: 114523032020505252}
-  m_Layer: 0
+  - component: {fileID: 114112840246496952}
+  m_Layer: 8
   m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4699,7 +4699,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &114523032020505252
+--- !u!114 &114112840246496952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4708,6 +4708,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5891613415002646236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ac214a66121a247b555843b3126cb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 618ad6f7c0b094b4d98ccd76c8c4aba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Water
+  amountOfDamage: 1
