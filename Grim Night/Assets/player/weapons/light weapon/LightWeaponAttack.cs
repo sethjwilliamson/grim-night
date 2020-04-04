@@ -34,7 +34,7 @@ public class LightWeaponAttack : MonoBehaviour
     }
     void Shoot()
     {
-        timeStamp = Time.time + 1;
+        timeStamp = Time.time + .5f;
         GameObject projectile = Instantiate(ballOfLight, gameObject.transform.position, gameObject.transform.rotation);
         projectile.GetComponent<Rigidbody2D>().velocity = gameObject.transform.up * 50f;
     }

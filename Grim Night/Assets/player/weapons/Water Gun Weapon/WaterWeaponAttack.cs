@@ -9,7 +9,6 @@ public class WaterWeaponAttack : MonoBehaviour
     float lookAngle;
     Transform bone4;
     Transform bone7;
-    float moveDirection = 0;
     bool leftHand;
 
     // Start is called before the first frame update
