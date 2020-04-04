@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 412686903231847280}
   - component: {fileID: 412686903231847283}
   - component: {fileID: 412686903231847282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: watergun_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 412686903231847281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: 2.64, z: 0}
-  m_LocalScale: {x: 1.9300002, y: 1.8140002, z: 1}
+  m_LocalScale: {x: 1.9300014, y: 1.814001, z: 1}
   m_Children:
   - {fileID: 4409599072261302093}
   m_Father: {fileID: 0}
@@ -93,12 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0837e876fbf5a0449be90c3e5b63bc53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundHandX: -0.9
-  backgroundHandY: 4
-  backgroundRotation: 60
-  foregroundHandX: -0.9
-  foregroundHandY: 3.75
-  foregroundRotation: 60
+  backgroundHandX: 2.9
+  backgroundHandY: 1.3
+  backgroundRotation: 0
+  foregroundHandX: 3
+  foregroundHandY: 1
+  foregroundRotation: 0
 --- !u!1 &6556268279882599347
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4409599072261302093}
   - component: {fileID: 5823028477778213093}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
