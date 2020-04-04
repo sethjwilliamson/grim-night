@@ -18,6 +18,7 @@ public class CharacterController2D : MonoBehaviour
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
+    public bool isFollowingRoom = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     Collider2D mainCollider;
@@ -90,14 +91,14 @@ public class CharacterController2D : MonoBehaviour
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             
         }
-        if (!isGrounded)
-        {
-            mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
-        }
-        else
+        if (isGrounded || isFollowingRoom)
         {
             mainCamera.transform.position = new Vector3(t.position.x, t.position.y, cameraPos.z);
             cameraPos = mainCamera.transform.position;
+        }
+        else
+        {
+            mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
         }
     }
 

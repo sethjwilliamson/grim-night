@@ -21,7 +21,7 @@ public class groundCheck : MonoBehaviour
             isGrounded = false;
         }
     }
-    
+
     public bool getGroundCheck()
     {
         return isGrounded;
