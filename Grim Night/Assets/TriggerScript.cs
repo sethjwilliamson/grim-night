@@ -7,6 +7,8 @@ public class TriggerScript : MonoBehaviour
 {
     ParticleSystem ps;
 
+    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
+
     // these lists are used to contain the particles which match
     // the trigger conditions each frame.
     //List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
@@ -16,9 +18,21 @@ public class TriggerScript : MonoBehaviour
     {
         ps = GetComponent<ParticleSystem>();
     }
+    
 
-    private void OnParticleCollision(GameObject other)
+    void OnParticleTrigger()
     {
-        // Damage enemy
+        int numEnter = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+
+        for (int i = 0; i < numEnter; i++)
+        {
+            ParticleSystem.Particle p = enter[i];
+            //take damage
+            enter[i] = p;
+        }
+
+        ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+
+        Debug.Log("Working!");
     }
 }
