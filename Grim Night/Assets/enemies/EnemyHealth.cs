@@ -37,6 +37,10 @@ public class EnemyHealth : MonoBehaviour
                 health = health - (ow.getDamage() * (rangedEffectiveness / 100));
             }
         }
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
     private void OnParticleCollision(GameObject other)
@@ -64,6 +68,10 @@ public class EnemyHealth : MonoBehaviour
             {
                 health = health - (ow.getDamage() * (rangedEffectiveness / 100));
             }
+        }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

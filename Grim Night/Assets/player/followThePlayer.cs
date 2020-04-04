@@ -13,7 +13,6 @@ public class followThePlayer : MonoBehaviour
     {
         if (other.gameObject.layer == 9)
         {
-            Debug.Log("isInTheRoom");
             player.isFollowingRoom = true;
         }
     }
@@ -21,7 +20,6 @@ public class followThePlayer : MonoBehaviour
     {
         if (other.gameObject.layer == 9)
         {
-            Debug.Log("LeftTheRoom");
             player.isFollowingRoom = true;
         }
     }
