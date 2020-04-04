@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetNapped : MonoBehaviour
 {
-    private Transform nabbed;
+    private GameObject nabbed;
     private bool phaseOne;
     private bool phaseTwo;
     private bool phaseThree;
@@ -18,9 +18,10 @@ public class GetNapped : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.layer);
+
         if (other.gameObject.layer != 8)
         {
-            nabbed = other.GetComponentInParent<Transform>();
+            nabbed = other.gameObject;
             nabbed.transform.parent = gameObject.transform;
             StartCoroutine(Teleport());
         }
