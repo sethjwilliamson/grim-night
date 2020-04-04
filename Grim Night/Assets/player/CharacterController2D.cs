@@ -35,6 +35,7 @@ public class CharacterController2D : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
+        gameObject.layer = 9;
 
         if (mainCamera)
             cameraPos = mainCamera.transform.position;
