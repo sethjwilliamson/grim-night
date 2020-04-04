@@ -13,26 +13,58 @@ public class EnemyHealth : MonoBehaviour
     private Damage ow;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ow = other.gameObject.GetComponent<Damage>();
-        if (ow.getType() == "Light")
+        if (other.gameObject.layer == 8)
         {
-            health = health - (ow.getDamage() * (lightEffectiveness / 100));
+            ow = other.gameObject.GetComponent<Damage>();
+            if (ow.getType() == "Light")
+            {
+                health = health - (ow.getDamage() * (lightEffectiveness / 100));
+            }
+            else if (ow.getType() == "Fire")
+            {
+                health = health - (ow.getDamage() * (fireEffectiveness / 100));
+            }
+            else if (ow.getType() == "Water")
+            {
+                health = health - (ow.getDamage() * (waterEffectiveness / 100));
+            }
+            else if (ow.getType() == "Physical")
+            {
+                health = health - (ow.getDamage() * (physicalEffectiveness / 100));
+            }
+            else if (ow.getType() == "Ranged")
+            {
+                health = health - (ow.getDamage() * (rangedEffectiveness / 100));
+            }
         }
-        else if (ow.getType() == "Fire")
+
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("test");
+        if (other.gameObject.layer == 8)
         {
-            health = health - (ow.getDamage() * (fireEffectiveness / 100));
-        }
-        else if (ow.getType() == "Water")
-        {
-            health = health - (ow.getDamage() * (waterEffectiveness / 100));
-        }
-        else if (ow.getType() == "Physical")
-        {
-            health = health - (ow.getDamage() * (physicalEffectiveness / 100));
-        }
-        else if (ow.getType() == "Ranged")
-        {
-            health = health - (ow.getDamage() * (rangedEffectiveness / 100));
+            ow = other.gameObject.GetComponent<Damage>();
+            if (ow.getType() == "Light")
+            {
+                health = health - (ow.getDamage() * (lightEffectiveness / 100));
+            }
+            else if (ow.getType() == "Fire")
+            {
+                health = health - (ow.getDamage() * (fireEffectiveness / 100));
+            }
+            else if (ow.getType() == "Water")
+            {
+                health = health - (ow.getDamage() * (waterEffectiveness / 100));
+            }
+            else if (ow.getType() == "Physical")
+            {
+                health = health - (ow.getDamage() * (physicalEffectiveness / 100));
+            }
+            else if (ow.getType() == "Ranged")
+            {
+                health = health - (ow.getDamage() * (rangedEffectiveness / 100));
+            }
         }
     }
 }

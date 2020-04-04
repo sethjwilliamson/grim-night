@@ -536,8 +536,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 241837927144285789}
+  - component: {fileID: 6543966095282429601}
+  - component: {fileID: 5706955395215039506}
   m_Layer: 0
-  m_Name: grabbyBoi
+  m_Name: kidNapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,6 +561,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6543966095282429601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241837927143930493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c040f47e10b794e9687191672d68f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  lightEffectiveness: 100
+  fireEffectiveness: 90
+  waterEffectiveness: 50
+  physicalEffectiveness: 75
+  rangedEffectiveness: 75
+--- !u!70 &5706955395215039506
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241837927143930493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 8}
+  m_Size: {x: 5, y: 20}
+  m_Direction: 0
 --- !u!1 &241837927143930495
 GameObject:
   m_ObjectHideFlags: 0

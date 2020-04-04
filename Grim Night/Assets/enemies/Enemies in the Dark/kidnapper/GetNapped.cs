@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class GetNapped : MonoBehaviour
 {
-    public float health = 100;
-    public float lightEffectiveness;
-    public float fireEffectiveness;
-    public float waterEffectiveness;
-    public float physicalEffectiveness;
-    public float rangedEffectiveness;
-    private GameObject nabbed;
+    private Transform nabbed;
     private bool phaseOne;
     private bool phaseTwo;
     private bool phaseThree;
@@ -23,9 +17,13 @@ public class GetNapped : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        nabbed = other.gameObject;
-        nabbed.transform.parent = gameObject.transform;
-        StartCoroutine(Teleport());
+        Debug.Log(other.gameObject.layer);
+        if (other.gameObject.layer != 8)
+        {
+            nabbed = other.GetComponentInParent<Transform>();
+            nabbed.transform.parent = gameObject.transform;
+            StartCoroutine(Teleport());
+        }
     }
     private void Update()
     {
