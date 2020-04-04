@@ -23,7 +23,7 @@ public class despawnBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer != 8)
+        if (other.gameObject.layer != 9)
         {
             Destroy(gameObject);
         }

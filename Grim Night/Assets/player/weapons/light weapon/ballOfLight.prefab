@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 198927108903549142}
   - component: {fileID: 199440884657882702}
   - component: {fileID: 114480691806982638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ballOfLight
   m_TagString: weapon
   m_Icon: {fileID: 0}

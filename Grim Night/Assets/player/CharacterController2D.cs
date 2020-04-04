@@ -22,7 +22,7 @@ public class CharacterController2D : MonoBehaviour
     Collider2D mainCollider;
     AudioSource step;
     // Check every collider except Player and Ignore Raycast
-    LayerMask layerMask = ~(1 << 2 | 1 << 8);
+    LayerMask layerMask = ~(1 << 2 | 1 << 9);
     Transform t;
     // Use this for initialization
     void Start()
@@ -35,7 +35,7 @@ public class CharacterController2D : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
-        gameObject.layer = 8;
+        gameObject.layer = 9;
 
         if (mainCamera)
             cameraPos = mainCamera.transform.position;
