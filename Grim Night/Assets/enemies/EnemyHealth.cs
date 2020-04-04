@@ -41,7 +41,6 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("test");
         if (other.gameObject.layer == 8)
         {
             ow = other.gameObject.GetComponent<Damage>();
