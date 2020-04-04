@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 241837927144285789}
   - component: {fileID: 6543966095282429601}
   - component: {fileID: 5706955395215039506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kidNapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 241837927679571368}
   - component: {fileID: 241837927679571369}
   - component: {fileID: 241837927679571370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: kidnapperHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,10 +752,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af197a29268d1844c9407a2955bf7a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  lightEffectiveness: 0
-  fireEffectiveness: 0
-  waterEffectiveness: 0
-  physicalEffectiveness: 0
-  rangedEffectiveness: 0
   checkPoint: {x: 0, y: 0, z: 0}

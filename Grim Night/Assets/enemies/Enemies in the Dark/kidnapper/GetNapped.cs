@@ -8,7 +8,6 @@ public class GetNapped : MonoBehaviour
     private bool phaseOne;
     private bool phaseTwo;
     private bool phaseThree;
-    private bool phaseFour;
     private Vector3 startPos;
     public Vector3 checkPoint;
     private void Start()
