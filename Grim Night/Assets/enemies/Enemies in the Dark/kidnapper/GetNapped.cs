@@ -17,9 +17,7 @@ public class GetNapped : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.layer);
-
-        if (other.gameObject.layer != 8)
+        if (other.gameObject.layer == 9)
         {
             nabbed = other.gameObject;
             nabbed.transform.parent = gameObject.transform;
