@@ -4775,7 +4775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Light
-  amountOfDamage: 20
+  amountOfDamage: 100
 --- !u!1 &5928490939764915200
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - weapon
   - library_bound
+  - p_bone_1
+  - p_bone_2
   layers:
   - Default
   - TransparentFX

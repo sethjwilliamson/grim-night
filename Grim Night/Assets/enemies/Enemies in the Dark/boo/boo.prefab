@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706777828674466956}
   m_Layer: 0
-  m_Name: bone_7
+  m_Name: bone_75
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706777828674466966}
   m_Layer: 0
-  m_Name: bone_4
+  m_Name: bone_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 706777828674466968}
   - component: {fileID: 114538504375300828}
   - component: {fileID: 238687163}
+  - component: {fileID: 2507137298894352415}
   m_Layer: 8
   m_Name: boo
   m_TagString: Untagged
@@ -375,7 +376,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c2037c51a99ce42af499a60f95a9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+--- !u!58 &2507137298894352415
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706777828674562232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 4.5}
+  serializedVersion: 2
+  m_Radius: 3
 --- !u!1 &706777828674562234
 GameObject:
   m_ObjectHideFlags: 0

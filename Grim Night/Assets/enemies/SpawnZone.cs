@@ -19,6 +19,7 @@ public class SpawnZone : MonoBehaviour
     public GameObject enemyPrefab5;
     private GameObject enemy5;
     public Vector3 enemyLocation5;
+    bool plsno;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +29,19 @@ public class SpawnZone : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        enemy1 = Instantiate(enemyPrefab1);
-        enemy1.transform.position = enemyLocation1;
-        enemy2 = Instantiate(enemyPrefab2);
-        enemy2.transform.position = enemyLocation2;
-        enemy3 = Instantiate(enemyPrefab3);
-        enemy3.transform.position = enemyLocation3;
-        enemy4 = Instantiate(enemyPrefab4);
-        enemy4.transform.position = enemyLocation4;
-        enemy5 = Instantiate(enemyPrefab5);
-        enemy5.transform.position = enemyLocation5;
+        if (other.gameObject.layer == 9 && !plsno)
+        {
+            enemy1 = Instantiate(enemyPrefab1);
+            enemy1.transform.position = enemyLocation1;
+            enemy2 = Instantiate(enemyPrefab2);
+            enemy2.transform.position = enemyLocation2;
+            enemy3 = Instantiate(enemyPrefab3);
+            enemy3.transform.position = enemyLocation3;
+            enemy4 = Instantiate(enemyPrefab4);
+            enemy4.transform.position = enemyLocation4;
+            enemy5 = Instantiate(enemyPrefab5);
+            enemy5.transform.position = enemyLocation5;
+            plsno = true;
+        }
     }
 }
