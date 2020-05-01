@@ -16,8 +16,8 @@ public class WaterWeaponAttack : MonoBehaviour
     {
         //waterSplash = GameObject.Find("water").GetComponent<ParticleSystem>();
 
-        bone4 = GameObject.FindWithTag("p_bone_1").transform;
-        bone7 = GameObject.FindWithTag("p_bone_2").transform;
+        bone4 = GameObject.Find("p_bone_4").transform;
+        bone7 = GameObject.Find("p_bone_7").transform;
     }
 
     void LateUpdate()
