@@ -16,6 +16,8 @@ public class CharacterController2D : MonoBehaviour
 
     bool facingRight = true;
 
+    public bool napped = false;
+
     public bool enteredRoom;
     public float cameraSize;
 

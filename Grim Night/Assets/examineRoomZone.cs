@@ -16,7 +16,6 @@ public class examineRoomZone : MonoBehaviour
         paneCamera = new Vector3(paneTo.position.x,paneTo.position.y,mainCamera.position.z);
         if (other.gameObject.layer == 9)
         {
-            Debug.Log(mainCamera.position);
             player.originalCameraPos = mainCamera.position;
             player.newPos = paneCamera;
             player.trappedSequence = true;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GetNapped : MonoBehaviour
 {
+    public CharacterController2D player;
     private GameObject nabbed;
     private bool phaseOne;
     private bool phaseTwo;
@@ -13,13 +14,16 @@ public class GetNapped : MonoBehaviour
     public Vector3 checkPoint;
     private void Start()
     {
+        player = GameObject.Find("player").GetComponent<CharacterController2D>();
         startPos = transform.root.position;
         startRot = transform.root.rotation;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 9)
+        if (other.gameObject.layer == 9 && !player.napped)
         {
+            Debug.Log(player.napped);
+            player.napped = true;
             nabbed = other.gameObject;
             nabbed.transform.parent = gameObject.transform;
             StartCoroutine(Teleport());
@@ -64,5 +68,6 @@ public class GetNapped : MonoBehaviour
         nabbed.transform.parent = null;
         nabbed = null;
         phaseTwo = false;
+        player.napped = false;
     }
 }

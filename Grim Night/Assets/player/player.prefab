@@ -1464,7 +1464,7 @@ MonoBehaviour:
   currentPos: {x: 0, y: 0, z: 0}
   newPos: {x: 0, y: 0, z: 0}
   originalCameraPos: {x: 0, y: 0, z: 0}
-  jumpTime: 0.2
+  jumpTime: 0.15
   isFollowingRoom: 0
   isInLargeRoom: 0
 --- !u!82 &5548607383535338931
