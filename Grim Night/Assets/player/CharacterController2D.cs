@@ -33,7 +33,7 @@ public class CharacterController2D : MonoBehaviour
 
 
     float moveDirection = 0;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     public bool isFollowingRoom = false;
     public bool isInLargeRoom = false;
     Vector3 cameraPos;
@@ -63,34 +63,43 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Change facing direction
-        if (moveDirection != 0 && !trappedSequence)
+        if (!napped && !trappedSequence)
         {
-            animator.SetBool("isRun", true);
-            step.loop = true;
-            step.enabled = true;
-            if (moveDirection > 0 && !facingRight)
+            animator.enabled = true;
+            // Change facing direction
+            if (moveDirection != 0)
             {
-                facingRight = true;
-                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                animator.SetBool("isRun", true);
+                step.loop = true;
+                step.enabled = true;
+                if (moveDirection > 0 && !facingRight)
+                {
+                    facingRight = true;
+                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                }
+                if (moveDirection < 0 && facingRight)
+                {
+                    facingRight = false;
+                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                }
             }
-            if (moveDirection < 0 && facingRight)
+            else
             {
-                facingRight = false;
-                t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                animator.SetBool("isRun", false);
+                step.loop = false;
+                step.enabled = false;
             }
         }
-        else
-        {
-            animator.SetBool("isRun", false);
-            step.loop = false;
-            step.enabled = false;
-        }
-
         // Examine the Room Sequence
         if(trappedSequence)
         {
+            moveDirection = 0;
             currentPos = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
+            animator.SetBool("isRun", false);
+            animator.enabled = false;
+            step.loop = false;
+            step.enabled = false;
+            r2d.gravityScale = 0f;
             if (trappedSequencePhase2)
             {
                 mainCamera.transform.position = Vector3.Lerp(currentPos, new Vector3(t.position.x, originalCameraPos.y, originalCameraPos.z), Time.deltaTime * 4f);
@@ -189,39 +198,42 @@ public class CharacterController2D : MonoBehaviour
         //isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.23f, layerMask);
 
         isGrounded = groundCheck.GetComponent<groundCheck>().getGroundCheck();
-        // Movement controls
-        if (Input.GetKey(KeyCode.A))
-            moveDirection = -1;
-        else if (Input.GetKey(KeyCode.D))
-            moveDirection = 1;
-        else
-            moveDirection = 0;
+        if (!napped && !trappedSequence)
+        {
+            r2d.gravityScale = gravityScale;
+            // Movement controls
+            if (Input.GetKey(KeyCode.A))
+                moveDirection = -1;
+            else if (Input.GetKey(KeyCode.D))
+                moveDirection = 1;
+            else
+                moveDirection = 0;
 
-        // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            r2d.velocity = Vector2.up * jumpHeight;
-            jumpTimeCounter = jumpTime;
-            isJumping = true;
-        }
-        if (Input.GetKey(KeyCode.Space) && isJumping)
-        {
-            if (jumpTimeCounter > 0)
+            // Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 r2d.velocity = Vector2.up * jumpHeight;
-                jumpTimeCounter -= Time.deltaTime;
+                jumpTimeCounter = jumpTime;
+                isJumping = true;
             }
-            else
+            if (Input.GetKey(KeyCode.Space) && isJumping)
+            {
+                if (jumpTimeCounter > 0)
+                {
+                    r2d.velocity = Vector2.up * jumpHeight;
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else
+                    isJumping = false;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
                 isJumping = false;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
+            }
 
-        // Apply movement velocity
-        if (!trappedSequence)
+            // Apply movement velocity
             r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+        }
         else
             r2d.velocity = new Vector2(0f, 0f);
     }

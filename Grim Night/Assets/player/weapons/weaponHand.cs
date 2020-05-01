@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class weaponHand : MonoBehaviour
 {
+    public CharacterController2D player;
     public float backgroundHandX;
     public float backgroundHandY;
     public float backgroundRotation;
@@ -19,6 +20,7 @@ public class weaponHand : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        player = GameObject.Find("player").GetComponent<CharacterController2D>();
         leftHand = (gameObject.transform.parent.gameObject == GameObject.Find("bone_6"));
         backgroundHand = GameObject.Find("bone_6");
         foregroundHand = GameObject.Find("bone_9");
@@ -39,41 +41,44 @@ public class weaponHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (!player.napped && !player.trappedSequence)
         {
-            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
-            if (leftHand)
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                if (moveDirection > 0)
+                moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+                if (leftHand)
                 {
-                    gameObject.transform.parent = backgroundHand.transform;
-                    gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
-                    gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
-                    sprite.sortingOrder = 2;
+                    if (moveDirection > 0)
+                    {
+                        gameObject.transform.parent = backgroundHand.transform;
+                        gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
+                        gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
+                        sprite.sortingOrder = 2;
+                    }
+                    if (moveDirection < 0)
+                    {
+                        gameObject.transform.parent = foregroundHand.transform;
+                        gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
+                        gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
+                        sprite.sortingOrder = 9;
+                    }
                 }
-                if (moveDirection < 0)
+                else
                 {
-                    gameObject.transform.parent = foregroundHand.transform;
-                    gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
-                    gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
-                    sprite.sortingOrder = 9;
-                }
-            }
-            else
-            {
-                if (moveDirection < 0)
-                {
-                    gameObject.transform.parent = backgroundHand.transform;
-                    gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
-                    gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
-                    sprite.sortingOrder = 0;
-                }
-                if (moveDirection > 0)
-                {
-                    gameObject.transform.parent = foregroundHand.transform;
-                    gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
-                    gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
-                    sprite.sortingOrder = 11;
+                    if (moveDirection < 0)
+                    {
+                        gameObject.transform.parent = backgroundHand.transform;
+                        gameObject.transform.localPosition = new Vector3(backgroundHandX, backgroundHandY, 0);
+                        gameObject.transform.localRotation = Quaternion.Euler(0, 0, backgroundRotation);
+                        sprite.sortingOrder = 0;
+                    }
+                    if (moveDirection > 0)
+                    {
+                        gameObject.transform.parent = foregroundHand.transform;
+                        gameObject.transform.localPosition = new Vector3(foregroundHandX, foregroundHandY, 0);
+                        gameObject.transform.localRotation = Quaternion.Euler(0, 0, foregroundRotation);
+                        sprite.sortingOrder = 11;
+                    }
                 }
             }
         }

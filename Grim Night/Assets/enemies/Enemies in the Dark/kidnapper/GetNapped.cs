@@ -22,7 +22,6 @@ public class GetNapped : MonoBehaviour
     {
         if (other.gameObject.layer == 9 && !player.napped)
         {
-            Debug.Log(player.napped);
             player.napped = true;
             nabbed = other.gameObject;
             nabbed.transform.parent = gameObject.transform;
