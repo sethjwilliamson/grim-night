@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3371353161782955314}
-  - component: {fileID: 3371353161782955315}
+  - component: {fileID: 751347744259904561}
   m_Layer: 10
   m_Name: Floors
   m_TagString: Untagged
@@ -169,8 +169,8 @@ Transform:
   m_Father: {fileID: 3371353162464263705}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3371353161782955315
-BoxCollider2D:
+--- !u!70 &751347744259904561
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,19 +182,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -14.681694}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 90, y: 33}
-    newSize: {x: 90, y: 33}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 90, y: 3.636612}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -14.68169}
+  m_Size: {x: 95, y: 3.636612}
+  m_Direction: 1
 --- !u!1 &3371353162464263706
 GameObject:
   m_ObjectHideFlags: 0

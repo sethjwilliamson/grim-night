@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -26,6 +25,9 @@ public class CharacterController2D : MonoBehaviour
     public Vector3 newPos;
     public Vector3 originalCameraPos;
 
+    float jumpTimeCounter;
+    public float jumpTime;
+    bool isJumping;
 
 
     float moveDirection = 0;
@@ -59,20 +61,6 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = groundCheck.GetComponent<groundCheck>().getGroundCheck();
-        // Movement controls
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        {
-            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
-        }
-        else
-        {
-            if (isGrounded || r2d.velocity.magnitude < 0.01f)
-            {
-                moveDirection = 0;
-            }
-        }
-
         // Change facing direction
         if (moveDirection != 0 && !trappedSequence)
         {
@@ -96,7 +84,6 @@ public class CharacterController2D : MonoBehaviour
             step.loop = false;
             step.enabled = false;
         }
-
 
         // Examine the Room Sequence
         if(trappedSequence)
@@ -168,10 +155,6 @@ public class CharacterController2D : MonoBehaviour
         }
         else
         {
-            // Jumping
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-                r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-
             if (isFollowingRoom)
             {
                 mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 5, cameraPos.z);
@@ -193,6 +176,7 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, cameraSize, Time.deltaTime * 4);
         }
+
     }
 
     void FixedUpdate()
@@ -202,13 +186,41 @@ public class CharacterController2D : MonoBehaviour
         // Check if player is grounded
         //isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.23f, layerMask);
 
+        isGrounded = groundCheck.GetComponent<groundCheck>().getGroundCheck();
+        // Movement controls
+        if (Input.GetKey(KeyCode.A))
+            moveDirection = -1;
+        else if (Input.GetKey(KeyCode.D))
+            moveDirection = 1;
+        else
+            moveDirection = 0;
+
+        // Jumping
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            r2d.velocity = Vector2.up * jumpHeight;
+            jumpTimeCounter = jumpTime;
+            isJumping = true;
+        }
+        if (Input.GetKey(KeyCode.Space) && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                r2d.velocity = Vector2.up * jumpHeight;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+                isJumping = false;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
+
         // Apply movement velocity
         if (!trappedSequence)
             r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
         else
             r2d.velocity = new Vector2(0f, 0f);
-
-        // Simple debug
-        Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, 0.23f, 0), isGrounded ? Color.green : Color.red);
     }
 }
