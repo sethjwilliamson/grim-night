@@ -21,7 +21,7 @@ public class GetLight : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-
+        Destroy(GameObject.Find("Examine Light"));
         Destroy(gameObject);
         Instantiate(prefab).transform.SetParent(bone6.transform);
     }

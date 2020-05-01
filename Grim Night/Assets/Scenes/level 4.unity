@@ -192,7 +192,7 @@ PrefabInstance:
     - target: {fileID: 4340377972148544895, guid: 71b1a34bdb7ec8c4a8b9b269ec8c989e,
         type: 3}
       propertyPath: m_Name
-      value: Warp
+      value: WarpOut
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71b1a34bdb7ec8c4a8b9b269ec8c989e, type: 3}
@@ -485,7 +485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &509234131
 GameObject:
@@ -809,6 +809,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4340377972148544888, guid: 71b1a34bdb7ec8c4a8b9b269ec8c989e,
+        type: 3}
+      propertyPath: nameOfLevel
+      value: level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4340377972148544892, guid: 71b1a34bdb7ec8c4a8b9b269ec8c989e,
         type: 3}
       propertyPath: m_SortingLayerID
