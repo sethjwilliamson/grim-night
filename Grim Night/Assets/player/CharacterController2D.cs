@@ -93,7 +93,7 @@ public class CharacterController2D : MonoBehaviour
         }
         if (isGrounded || isFollowingRoom)
         {
-            mainCamera.transform.position = new Vector3(t.position.x, t.position.y, cameraPos.z);
+            mainCamera.transform.position = new Vector3(t.position.x, t.position.y+10, cameraPos.z);
             cameraPos = mainCamera.transform.position;
         }
         else

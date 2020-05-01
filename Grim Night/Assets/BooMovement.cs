@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BooMovement : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     private float speed = 10.0f;
     private Vector2 target;
     private Vector2 position;
@@ -15,7 +15,7 @@ public class BooMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = player.transform.position;
+        target = GameObject.Find("player").GetComponent<Transform>().position;
         float step = speed * Time.deltaTime;
 
         // move sprite towards the target location

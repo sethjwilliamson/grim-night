@@ -9,7 +9,6 @@ public class groundCheck : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("isGrounded");
             isGrounded = true;
         }
     }
@@ -17,7 +16,6 @@ public class groundCheck : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("isNotGrounded");
             isGrounded = false;
         }
     }

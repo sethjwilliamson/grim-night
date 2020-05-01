@@ -9,10 +9,12 @@ public class GetNapped : MonoBehaviour
     private bool phaseTwo;
     private bool phaseThree;
     private Vector3 startPos;
+    private Quaternion startRot;
     public Vector3 checkPoint;
     private void Start()
     {
         startPos = transform.root.position;
+        startRot = transform.root.rotation;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,6 +36,7 @@ public class GetNapped : MonoBehaviour
         if (phaseTwo)
         {
             transform.root.position = checkPoint;
+            transform.root.rotation = Quaternion.Euler(0, 0, 0f);
             nabbed.transform.localPosition = new Vector3(2f, 13f, 0);
             nabbed.transform.localRotation = Quaternion.Euler(0, 0, 90f);
             phaseOne = false;
@@ -41,6 +44,7 @@ public class GetNapped : MonoBehaviour
         if (phaseThree)
         {
             transform.root.position = startPos;
+            transform.root.rotation = startRot;
             phaseTwo = false;
         }
     }
