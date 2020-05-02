@@ -21,7 +21,7 @@ public class LightWeaponAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!player.trappedSequence) {
+        if (!player.trappedSequence || !player.napped) {
             Aim();
             if (Input.GetButtonDown("Fire1") && (onCooldown())) {
                 Animate();

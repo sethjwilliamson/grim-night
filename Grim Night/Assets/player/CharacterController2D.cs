@@ -27,6 +27,7 @@ public class CharacterController2D : MonoBehaviour
     public Vector3 newPos;
     public Vector3 originalCameraPos;
 
+    public bool finalBoss = false;
 
     float moveDirection = 0;
     public bool isGrounded = false;
@@ -165,12 +166,12 @@ public class CharacterController2D : MonoBehaviour
         {
             if (isFollowingRoom)
             {
-                mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 5, cameraPos.z);
+                mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 10f, cameraPos.z);
                 cameraPos = mainCamera.transform.position;
             }
             else if (isInLargeRoom)
             {
-                mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 10, cameraPos.z);
+                mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
                 cameraPos = mainCamera.transform.position;
             }
             else
