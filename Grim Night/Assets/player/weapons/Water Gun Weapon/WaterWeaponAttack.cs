@@ -15,9 +15,8 @@ public class WaterWeaponAttack : MonoBehaviour
     void Start()
     {
         //waterSplash = GameObject.Find("water").GetComponent<ParticleSystem>();
-
-        bone4 = GameObject.Find("p_bone_4").transform;
-        bone7 = GameObject.Find("p_bone_7").transform;
+        bone4 = GameObject.FindWithTag("p_bone_1").transform;
+        bone7 = GameObject.FindWithTag("p_bone_2").transform;
     }
 
     void LateUpdate()
@@ -40,8 +39,7 @@ public class WaterWeaponAttack : MonoBehaviour
         {
             lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - bone4.position;
             lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-            bone4.rotation = Quaternion.Euler(0f, 0f, lookAngle - 190f);
-            bone7.rotation = Quaternion.Euler(0f, 0f, 90);
+            bone4.rotation = Quaternion.Euler(0f, 0f, lookAngle - 150f);
 
         }
         else 
@@ -49,7 +47,6 @@ public class WaterWeaponAttack : MonoBehaviour
             lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - bone7.position;
             lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             bone7.rotation = Quaternion.Euler(0f, 0f, lookAngle - 30f);
-            bone4.rotation = Quaternion.Euler(0f, 0f, 90);
         }
     }
 }

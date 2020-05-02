@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class GetLight : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject weapon;
+    public GameObject weapon2;
     public GameObject bone6;
     public GameObject bone9;
 
@@ -21,8 +22,13 @@ public class GetLight : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-
+        Destroy(GameObject.Find("Examine Light"));
         Destroy(gameObject);
-        Instantiate(prefab).transform.SetParent(bone6.transform);
+        Instantiate(weapon).transform.SetParent(bone6.transform);
+
+        if (weapon2)
+        {
+            Instantiate(weapon2).transform.SetParent(bone9.transform);
+        }
     }
 }

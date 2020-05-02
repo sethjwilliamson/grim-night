@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3637907335892610747}
   - component: {fileID: 3637907335892610746}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: staircase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3637907336403549779}
   - component: {fileID: 3637907336403549777}
-  - component: {fileID: 3637907336403549776}
+  - component: {fileID: 2170125568024561458}
+  - component: {fileID: 989835353159744419}
   m_Layer: 10
   m_Name: Floors
   m_TagString: Untagged
@@ -141,8 +142,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.962494, y: 2.1003418}
   m_EdgeRadius: 0
---- !u!61 &3637907336403549776
-BoxCollider2D:
+--- !u!70 &2170125568024561458
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -154,19 +155,25 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046798706, y: -44.036114}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 21, y: 90}
-    newSize: {x: 21, y: 90}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20.906403, y: 1.4403}
-  m_EdgeRadius: 0
+  m_Offset: {x: -7.018753, y: 23.1871}
+  m_Size: {x: 8.962494, y: 2.100342}
+  m_Direction: 1
+--- !u!70 &989835353159744419
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637907336403549778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04679871, y: -44.03611}
+  m_Size: {x: 25.9064, y: 1.4403}
+  m_Direction: 1
 --- !u!1 &3637907336962026916
 GameObject:
   m_ObjectHideFlags: 0
