@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LightWeaponAttack : MonoBehaviour
 {
+    public CharacterController2D player;
     public GameObject ballOfLight;
     Animator animator;
     Vector2 lookDirection;
@@ -13,17 +14,20 @@ public class LightWeaponAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("player").GetComponent<CharacterController2D>();
         animator = GameObject.Find("sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Aim();
-        if (Input.GetButtonDown("Fire1") && (onCooldown())) {
-            Animate();
-            StartCoroutine(Wait());
-            Shoot();
+        if (!player.trappedSequence) {
+            Aim();
+            if (Input.GetButtonDown("Fire1") && (onCooldown())) {
+                Animate();
+                StartCoroutine(Wait());
+                Shoot();
+            }
         }
     }
     void Aim()

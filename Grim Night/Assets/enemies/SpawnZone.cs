@@ -16,32 +16,39 @@ public class SpawnZone : MonoBehaviour
     public GameObject enemyPrefab4;
     private GameObject enemy4;
     public Vector3 enemyLocation4;
-    public GameObject enemyPrefab5;
-    private GameObject enemy5;
-    public Vector3 enemyLocation5;
-    bool plsno;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public CharacterController2D player;
+    public Transform paneTo;
+    public Transform mainCamera;
+
+    Vector3 paneCamera;
+    bool plsno;
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        player = GameObject.Find("player").GetComponent<CharacterController2D>();
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Transform>();
+        paneCamera = new Vector3(paneTo.position.x, paneTo.position.y, mainCamera.position.z);
         if (other.gameObject.layer == 9 && !plsno)
         {
+            player.originalCameraPos = mainCamera.position;
+            player.newPos = paneCamera;
+            player.trappedSequence = true;
             enemy1 = Instantiate(enemyPrefab1);
-            enemy1.transform.position = enemyLocation1;
+            enemy1.transform.parent = this.gameObject.transform;
+            enemy1.transform.localPosition = enemyLocation1;
             enemy2 = Instantiate(enemyPrefab2);
-            enemy2.transform.position = enemyLocation2;
+            enemy2.transform.parent = this.gameObject.transform;
+            enemy2.transform.localPosition = enemyLocation2;
             enemy3 = Instantiate(enemyPrefab3);
-            enemy3.transform.position = enemyLocation3;
+            enemy3.transform.parent = this.gameObject.transform;
+            enemy3.transform.localPosition = enemyLocation3;
             enemy4 = Instantiate(enemyPrefab4);
-            enemy4.transform.position = enemyLocation4;
-            enemy5 = Instantiate(enemyPrefab5);
-            enemy5.transform.position = enemyLocation5;
+            enemy4.transform.parent = this.gameObject.transform;
+            enemy4.transform.localPosition = enemyLocation4;
             plsno = true;
         }
+        if(!player.trappedSequence && plsno)
+            Destroy(this.gameObject.GetComponent<SpawnZone>());
     }
 }

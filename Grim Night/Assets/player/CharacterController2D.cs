@@ -27,10 +27,6 @@ public class CharacterController2D : MonoBehaviour
     public Vector3 newPos;
     public Vector3 originalCameraPos;
 
-    float jumpTimeCounter;
-    public float jumpTime;
-    bool isJumping;
-
 
     float moveDirection = 0;
     public bool isGrounded = false;
@@ -100,6 +96,7 @@ public class CharacterController2D : MonoBehaviour
             step.loop = false;
             step.enabled = false;
             r2d.gravityScale = 0f;
+
             if (trappedSequencePhase2)
             {
                 mainCamera.transform.position = Vector3.Lerp(currentPos, new Vector3(t.position.x, originalCameraPos.y, originalCameraPos.z), Time.deltaTime * 4f);
@@ -187,6 +184,8 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, cameraSize, Time.deltaTime * 4);
         }
+        if (mainCamera.orthographicSize >= cameraSize - 1 && mainCamera.orthographicSize <= cameraSize + 1)
+            enteredRoom = false;
 
     }
 
@@ -210,26 +209,8 @@ public class CharacterController2D : MonoBehaviour
                 moveDirection = 0;
 
             // Jumping
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
+            if (Input.GetKey(KeyCode.Space) && isGrounded)
                 r2d.velocity = Vector2.up * jumpHeight;
-                jumpTimeCounter = jumpTime;
-                isJumping = true;
-            }
-            if (Input.GetKey(KeyCode.Space) && isJumping)
-            {
-                if (jumpTimeCounter > 0)
-                {
-                    r2d.velocity = Vector2.up * jumpHeight;
-                    jumpTimeCounter -= Time.deltaTime;
-                }
-                else
-                    isJumping = false;
-            }
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                isJumping = false;
-            }
 
             // Apply movement velocity
             r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
