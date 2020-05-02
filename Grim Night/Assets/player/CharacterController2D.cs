@@ -184,6 +184,8 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, cameraSize, Time.deltaTime * 4);
         }
+        if (mainCamera.orthographicSize >= cameraSize - 1 && mainCamera.orthographicSize <= cameraSize + 1)
+            enteredRoom = false;
 
     }
 
