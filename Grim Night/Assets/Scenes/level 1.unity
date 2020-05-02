@@ -775,7 +775,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -4929,6 +4929,12 @@ PrefabInstance:
       propertyPath: bone9
       value: 
       objectReference: {fileID: 1145858312}
+    - target: {fileID: 7312965076261346335, guid: 9ce91dfd6aad87d41b3297ca8b639ba3,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 8973484250274946683, guid: 1cc51b760cc41ea4284257af797fa1f5,
+        type: 3}
     - target: {fileID: 7312965076358060070, guid: 9ce91dfd6aad87d41b3297ca8b639ba3,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
