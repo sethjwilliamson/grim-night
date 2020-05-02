@@ -13,11 +13,15 @@ public class followThePlayer : MonoBehaviour
     {
         if (other.gameObject.layer == 9)
         {
-            if(player.isFollowingRoom == true)
-                player.isFollowingRoom = false;
-            else if (player.isFollowingRoom == false)
                 player.isFollowingRoom = true;
-            Debug.Log(player.isFollowingRoom);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 9)
+        {
+                player.isFollowingRoom = false;
         }
     }
 }

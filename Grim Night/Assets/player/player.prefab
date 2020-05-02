@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 5548607382469497005}
   - component: {fileID: 5548607382469497003}
   - component: {fileID: 5548607382469497004}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,6 @@ MonoBehaviour:
   currentPos: {x: 0, y: 0, z: 0}
   newPos: {x: 0, y: 0, z: 0}
   originalCameraPos: {x: 0, y: 0, z: 0}
-  jumpTime: 0.15
   isGrounded: 0
   isFollowingRoom: 0
   isInLargeRoom: 0
