@@ -18,8 +18,8 @@ public class FireWeaponAttack : MonoBehaviour
     {
         //waterSplash = GameObject.Find("water").GetComponent<ParticleSystem>();
 
-        bone4 = GameObject.Find("p_bone_4").transform;
-        bone7 = GameObject.Find("p_bone_7").transform;
+        bone4 = GameObject.Find("bone_7").transform;
+        bone7 = GameObject.Find("bone_4").transform;
     }
 
     void LateUpdate()

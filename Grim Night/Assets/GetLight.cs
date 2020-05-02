@@ -22,12 +22,17 @@ public class GetLight : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+
+        weapon.transform.localScale = new Vector3(-1, 1, 1);
+
+
         Destroy(GameObject.Find("Examine Light"));
         Destroy(gameObject);
         Instantiate(weapon).transform.SetParent(bone6.transform);
 
         if (weapon2)
         {
+            weapon2.transform.localScale = new Vector3(-1, 1, 1);
             Instantiate(weapon2).transform.SetParent(bone9.transform);
         }
     }

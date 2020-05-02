@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 412686903231847280}
   - component: {fileID: 412686903231847283}
   - component: {fileID: 412686903231847282}
+  - component: {fileID: 114241411762634898}
   m_Layer: 0
   m_Name: stick_weapon
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 412686903231847281}
   m_LocalRotation: {x: 0, y: 0, z: 0.60876137, w: 0.7933534}
   m_LocalPosition: {x: -1.25, y: 2.64, z: 0}
-  m_LocalScale: {x: 1.9300002, y: 1.8140002, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,9 +93,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0837e876fbf5a0449be90c3e5b63bc53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   backgroundHandX: -0.9
   backgroundHandY: 4
   backgroundRotation: 60
   foregroundHandX: -0.9
   foregroundHandY: 3.75
   foregroundRotation: 60
+--- !u!114 &114241411762634898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412686903231847281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618ad6f7c0b094b4d98ccd76c8c4aba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Physical
+  amountOfDamage: 20
