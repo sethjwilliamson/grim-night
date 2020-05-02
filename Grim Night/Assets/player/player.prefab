@@ -1465,6 +1465,7 @@ MonoBehaviour:
   currentPos: {x: 0, y: 0, z: 0}
   newPos: {x: 0, y: 0, z: 0}
   originalCameraPos: {x: 0, y: 0, z: 0}
+  finalBoss: 0
   isGrounded: 0
   isFollowingRoom: 0
   isInLargeRoom: 0
@@ -1478,7 +1479,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 973bac7b06d199d44b2efb1bfdfaa27a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6734bdbeecaa0e64caab0f23db0e4d10, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
